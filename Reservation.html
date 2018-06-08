@@ -14,7 +14,7 @@
     <!-- Container that holds the form -->
     <div class="container">
         <div class="jumbotron" te>
-          <h1><b>Make a Reservation</b> </h1>
+          <h1><b>Reserve a Table</b> </h1>
           <hr>
     <div class="row">
         <div class="col-lg-6">
@@ -30,9 +30,28 @@
         </div>
         
        
-        <button type="submit" class="btn btn-primary">Submit</button id= "submit">
-        <button type="Home" class="btn btn-primary"> Cancel </button id = "cancel">
-      </form>
+        <button type="button" class="btn btn-outline-info">Submit</button id="submit">
+            <button type="button" class="btn btn-outline-danger">Cancel</button id="cancel">      
+        </form>
     </div>
 
+
+
+    <script type="text/javascript">
+        // Question: What does this code do?
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+          var newUser = {
+            username: $("#username").val().trim(),
+            phoneNumber: $("#phoneNumber").val().trim()
+          };
+    
+          // Question: What does this code do??
+          $.post("/api/reserve", newUser)
+            .then(function(data) {
+              console.log("Reservation.html", data);
+              alert("Adding reservation...");
+            });
+        });
+      </script>
 </body>
