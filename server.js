@@ -46,18 +46,26 @@ app.get("/reservation", function(req, res) {
 });
 
 app.get("/api/reserve", function(req, res) {
+
     return res.json(tables);
 });
 
 app.post("/api/reserve", function(req, res) {
   var newReserve = req.body;
   console.log(newReserve);
-
-  tables.push(newReserve);
-  console.log(newReserve);
+  if (tables.length > 4) {
+    waitList.push(newReserve);
+  } else {
+    tables.push(newReserve);
+  }
 
   res.json(newReserve);
 });
+//stops adding to reservation after 5 tables and adds to the waiting list
+
+
+
+
 
 // Starts the server to begin listening
 // =============================================================
