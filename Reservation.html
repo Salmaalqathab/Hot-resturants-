@@ -30,20 +30,20 @@
         </div>
         
        
-        <button type="button" class="btn btn-outline-info">Submit</button id="submit">
-            <button type="button" class="btn btn-outline-danger">Cancel</button id="cancel">      
+        <button type="button" class="btn btn-outline-info" id="submit">Submit</button>
+            <button type="button" class="btn btn-outline-danger" id="cancel">Cancel</button id="cancel">      
         </form>
     </div>
 
-
-
     <script type="text/javascript">
+
         // Question: What does this code do?
         $("#submit").on("click", function(event) {
           event.preventDefault();
           var newUser = {
-            username: $("#username").val().trim(),
-            phoneNumber: $("#phoneNumber").val().trim()
+            name: $("#username").val().trim(),
+            phone: $("#phoneNumber").val().trim()
+            
           };
     
           // Question: What does this code do??
