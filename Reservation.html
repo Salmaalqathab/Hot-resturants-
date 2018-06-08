@@ -35,4 +35,23 @@
         </form>
     </div>
 
+
+
+    <script type="text/javascript">
+        // Question: What does this code do?
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+          var newUser = {
+            username: $("#username").val().trim(),
+            phoneNumber: $("#phoneNumber").val().trim()
+          };
+    
+          // Question: What does this code do??
+          $.post("/api/reserve", newUser)
+            .then(function(data) {
+              console.log("Reservation.html", data);
+              alert("Adding reservation...");
+            });
+        });
+      </script>
 </body>
