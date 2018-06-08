@@ -35,15 +35,15 @@
         </form>
     </div>
 
-
-
     <script type="text/javascript">
+
         // Question: What does this code do?
         $("#submit").on("click", function(event) {
           event.preventDefault();
           var newUser = {
-            username: $("#username").val().trim(),
-            phoneNumber: $("#phoneNumber").val().trim()
+            name: $("#username").val().trim(),
+            phone: $("#phoneNumber").val().trim()
+            
           };
     
           // Question: What does this code do??
