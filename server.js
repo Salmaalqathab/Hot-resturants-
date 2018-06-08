@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 //Hot- Restaurant Tables and wait-list (DATA)
 
-var tables = [ 
+var tables = [
 { "name":"Cintia",
   "phone": "2458",
 
@@ -40,31 +40,23 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-<<<<<<< HEAD
 app.get("/reservation", function(req, res) {
     res.sendFile(path.join(__dirname, "Reservation.html"  ));
 
 });
 
-app.post("/api/reserve", function(req, res) {
-=======
-app.get("/reservation", function(req, res) { 
-    res.sendFile(path.join(__dirname, "Reservation.html"  ));
-
-});
 app.get("/api/reserve", function(req, res) {
     return res.json(tables);
-  });
-app.post("/api/reserve", function(req, res) { 
-var newReserve = req.body;
-console.log(newReserve);
+});
 
-tables.push(newReserve);
-console.log(newReserve);
+app.post("/api/reserve", function(req, res) {
+  var newReserve = req.body;
+  console.log(newReserve);
 
-res.json(newReserve);
->>>>>>> abf5543822b7a28f1ec2da9695c8f6951fd9a1a4
+  tables.push(newReserve);
+  console.log(newReserve);
 
+  res.json(newReserve);
 });
 
 // Starts the server to begin listening
